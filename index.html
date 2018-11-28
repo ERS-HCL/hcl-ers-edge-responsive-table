@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>core-grid</title>
+    <meta name="description" content="core-grid description">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <script type="module" src="/src/core-grid-datatypes/core-grid-datatypes.js"></script>
+  </head>
+  <body>
+    <core-grid-datatypes apirequest='{"handlerURL":"https://my-json-server.typicode.com/VelmuruganHCL/gridDemo/db"}' tableconfig='{"id":"materialsummary","theme":"blue","title":{"text":"Employee Details","align":"center","style":{"fontSize":"18px","fontWeight":"bold","fontFamily":"Arial, Helvetica, sans-serif","color":"#333333"}},"subtitle":{"text":"Employee details table","align":"center","style":{"fontSize":"14px","fontFamily":"Arial, Helvetica, sans-serif","fontWeight":"normal","color":"#666666"}},"search":{"enabled":true},"cellTemplate":[{"name":"checkbox","value":"empid","enabled":true},{"name":"legend","value":["empid","empname"],"color":["#FFD042","#db8f25"],"enabled":true},{"name":"link","value":["empid"],"enabled":true},{"name":"icon","icons":["edit","delete","download"],"enabled":true}]}'></core-grid-datatypes>
+    <script>
+      window.addEventListener('customValue', function(e){
+        console.log('details',e.detail.customval);
+      });
+
+      window.addEventListener('delegateAction', function(e){
+        console.log('events', e.detail.rowdata);
+      });
+      window.addEventListener('linkDelegateAction',function(e){
+        console.log('events', e.detail.rowdata);
+      })
+    </script>
+  </body>
+</html>
