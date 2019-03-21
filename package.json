@@ -1,5 +1,6 @@
 {
   "name": "hcl-ers-edge-responsive-table",
+  "version": "1.0.0",
   "dependencies": {
     "@polymer/polymer": "^3.0.0",
     "@polymer/iron-ajax": "^3.0.0-pre.19",
